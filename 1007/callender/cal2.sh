@@ -7,7 +7,7 @@ firstYear=1900
 	echo -n "input data : "
 	read yInput mInput
 #시작연도인 1900년부터 입력한 연도까지1월1일의 차이 계산
-	while [ $firstYear -lt $yInput ]
+	while [ $firstYear -le $yInput ]
 	do
 		if [ `expr $firstYear % 4` -eq 0 ] && [ `expr $firstYear % 100` -ne 0 ] || [ `expr $firstYear % 400` -eq 0 ]
 		then
@@ -15,18 +15,19 @@ firstYear=1900
 		else
 			setPoint=1 
 		fi
-			echo "setPoint = $setPoint"
+#			echo "setPoint = $setPoint"
 
 			p=`expr $p + $setPoint`
-			echo "p = $p"
+#			echo "p = $p"
 			firstYear=`expr $firstYear + 1`
-			echo "firstYear+1 = $firstYear"
+#			echo "firstYear+1 = $firstYear"
 	done
 #	echo "end p=$p"
-	echo "setPoint = $setPoint"
-#	p=`expr $p - $setPoint`
+#	echo "setPoint = $setPoint"
+	p=`expr $p - $setPoint`
 	p=`expr $p % 7`
-	if [ `expr $yInput % 4` -eq 0 ] && [ `expr $yInput % 100` -ne 0 ] || [ `expr $yInput % 400` -eq 0 ]
+#	if [ `expr $yInput % 4` -eq 0 ] && [ `expr $yInput % 100` -ne 0 ] || [ `expr $yInput % 400` -eq 0 ]
+	if [ $setPoint -eq 2 ]
 	then
 		year[1]=29
 	fi
