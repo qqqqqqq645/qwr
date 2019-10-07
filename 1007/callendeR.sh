@@ -1,4 +1,4 @@
-#2019년 9월 달력 출력
+#2019년 달력 출력
 echo -e "\t\t2019"
 p=3
 monthIndex=(31 28 31 30 31 30 31 31 30 31 30 31)
@@ -27,11 +27,12 @@ do
 		if [ $p -gt 7 ]
 		then
 			p=`expr $p - 7`
-			echo -ne "\n"
+			echo ""
 		fi
 
 	done
-	echo 
+	if [ $p -ne 1 ]
+	then echo
+	fi
 	month=`expr $month + 1`
 done
-echo		
