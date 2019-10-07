@@ -1,0 +1,9 @@
+ echo Type in the filename
+read file
+if [ -f $file ]
+then
+	echo "$file ===> ordinary file"
+else
+	echo "$file ===> not ordinary file"
+fi
+echo "File test end"
