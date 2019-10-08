@@ -6,6 +6,7 @@ p=1 #위치변수 p 는 일요일을 0으로 시작해서 토요일 6까지, 7�
 firstYear=1900
 	echo -n "input data : "
 	read yInput mInput
+	${mInput=-1} #사용자가 달을 입력하지 않고 연도만 입력했을때 mInput값 설
 	echo "mInput + 1 = `expr $mInput + 1`"
 #시작연도인 1900년부터 입력한 연도까지1월1일의 차이 계산
 	while [ $firstYear -le $yInput ]
@@ -34,9 +35,9 @@ firstYear=1900
 	fi
 	month=0 # 배열 인덱스는 0부터 시작하므로 month 1월=0 으 로 초기화
 	echo -e "\t$yInput"
-	if [ `expr ${mInput:-13}` -le 12 ] && [ `expr $mInput` -gt 0 ]
+	if [ $mInput -le 12 ] && [ $mInput -gt 0 ]
 	then
-		while [ $month -lt $mInput ]
+		while [ $month -le `expr $mInput - 1` ]
 		do
 			setPoint=`expr ${year[$month]} % 7`
 			p=`expr $p + $setPoint`
@@ -49,12 +50,12 @@ firstYear=1900
 			p=`expr $p % 7`
 
 		else
-			endMonth=12
+			endMonth=11
 	fi
 	while [ $month -le $endMonth ]
 		do
 			day=1 #날짜 변수
-				echo -e "\t 1월"
+				echo -e "\t `expr $month + 1`월"
 				echo  "일 월 화 수 목 금 토"
 				# 매월 1일의 위치를 계산하는 루프, 
 				cnt=0
