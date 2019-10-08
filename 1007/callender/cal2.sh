@@ -5,8 +5,8 @@ year=(31 28 31 30 31 30 31 31 30 31 30 31)
 p=1 #위치변수 p 는 일요일을 0으로 시작해서 토요일 6까지, 7이되면 다음줄로 이동 1900년 1월 1일은 월요일이므로p=1
 firstYear=1900
 	echo -n "input data : "
-	read yInput mInput
-	${mInput=-1} #사용자가 달을 입력하지 않고 연도만 입력했을때 mInput값 설
+	read yInput mInput  
+	mInput=${mInput:=-1} #사용자가 달을 입력하지 않고 연도만 입력했을때 mInput값 설
 	echo "mInput + 1 = `expr $mInput + 1`"
 #시작연도인 1900년부터 입력한 연도까지1월1일의 차이 계산
 	while [ $firstYear -le $yInput ]
