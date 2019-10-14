@@ -1,0 +1,2 @@
+gcc -o ex3_5 -Im ex3_5.c
+
