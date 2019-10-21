@@ -1,0 +1,10 @@
+공유 라이브러리 제작
+1 $gcc -shared -o libtest.so.1 max.o min.o
+  $ls
+  $ln -s libtest.so.1 libtest.so 
+lib은 접두어 so는 확장자 .1은 버전
+공유 라이브러리 경로 지정
+$export LD_LIBRARY_PATH=$LD_LIBRARY_PATH:~/lib
+$gcc -I./lib -L./lib main.c -ltest
+$./a.out
+
