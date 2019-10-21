@@ -1,0 +1,8 @@
+main : main.o search.o update.o
+	gcc -o main main.o search.o update.o
+main.o : main.c example.h
+	gcc -c main.c
+search.o : search.c
+	gcc -c search.c
+update.o : update.c
+	gcc -c update.c

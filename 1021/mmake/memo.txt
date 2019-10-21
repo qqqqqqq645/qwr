@@ -1,0 +1,55 @@
+make 도구 : s/w 개발도구 (complie & link 과정의 자동화)
+	(program 예)
+	"example.h"
+	#include <stdio.h>
+	#define YEAR 2019
+	
+
+	"search.c"
+	search()
+	{
+	printf("Search");
+	}
+	
+	"main.c"
+	#include "example.h"
+	main()
+	{
+		int year = YEAR;
+		printf("This year is %d\n",year);
+		search();
+		update();
+	}
+
+
+	"update.c"
+	update()
+	{
+		printf("Update Function\n");
+	}
+
+	"Makefile" 파일 작성
+	main : main.o search.o update.o
+	TAB gcc -o main main.o search.o update.o
+	main.o : main.c example.h
+	TAB gcc -c main.c
+	search.o : search.c
+	TAB gcc -c search.c
+	update.o : update.c
+	TAB gcc -c update.c
+
+	-complie & link
+	$make 
+
+	-execute
+	$./main
+
+
+1. 각자 컴파일해서 링크
+   $gcc -c main.c
+   $gcc -c search.c
+   $gcc -c update.c
+   $gcc -o main1 main.o, search.o update.o
+   ./main1
+
+2.	gcc -o main2 main.c search.c update.c
