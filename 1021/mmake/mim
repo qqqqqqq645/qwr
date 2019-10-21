@@ -1,0 +1,4 @@
+	gcc -o main4444 main.o search.o update.o
+	gcc -c main.c
+	gcc -c search.c
+	gcc -c update.c

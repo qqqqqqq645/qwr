@@ -1,3 +1,3 @@
 update(){
-	printf("Update Function\n");
+	printf("This is an Update Function\n");
 }

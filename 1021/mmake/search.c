@@ -1,3 +1,3 @@
 search(){
-printf("search Funtion");
+printf("search Funtion\n");
 }

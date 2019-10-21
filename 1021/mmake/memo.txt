@@ -29,7 +29,7 @@ make 도구 : s/w 개발도구 (complie & link 과정의 자동화)
 	}
 
 	"Makefile" 파일 작성
-	main : main.o search.o update.o
+	main : main.o search.o update.o 대상:의존하는파일들
 	TAB gcc -o main main.o search.o update.o
 	main.o : main.c example.h
 	TAB gcc -c main.c
@@ -53,3 +53,20 @@ make 도구 : s/w 개발도구 (complie & link 과정의 자동화)
    ./main1
 
 2.	gcc -o main2 main.c search.c update.c
+
+3. 컴파일하는 과정을 기술한파일i
+
+
+make에서는 파일수정한 시간정보를 체크해서 수정된 파일을 컴파일
+$make
+$touch main.c 하면 또 make 가능
+
+주석은 #
+매크로기능-긴 문자열을 하나의 문자열에저장
+
+
+
+
+
+mv makefile kim
+make -f kim

@@ -1,2 +1,2 @@
 #include <stdio.h>
-#define YEAR 2019
+#define YEAR 2020
