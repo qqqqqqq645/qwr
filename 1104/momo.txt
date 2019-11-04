@@ -1,0 +1,21 @@
+---make
+mm
+    5  vi dbg_first.c
+    6  gcc -g dbg_first.c -o dbg_first
+gdb dbg_first -> gdb 실행
+list
+list 
+list 소스
+run 실행
+break 정지점 설정
+quit 나가기
+help 명령어 글래스에 대한 도움말 조회
+스택 last in first out
+함수를 호출하되돌아올때
+연산할때
+자동변수
+
+process
+code
+data	//전역변수
+stack	//지역변수-함수호출이되면 생겼다가 끝나면사라짐
