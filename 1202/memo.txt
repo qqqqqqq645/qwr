@@ -1,0 +1,17 @@
+$쉘에서 제일 처음에 할일은 프롬프트 ㅈ출력
+명령어 입력
+$ls endter
+
+thread 실
+프로세스안에서 여러 작업을 할수있게
+여러 스레드를만들어서 여러 작업을 할수잇다
+스레드간협업도가능
+file 종ㄹ
+rwxrw-r-- 일반
+d directory
+b block장치 파일
+c character file
+l symbolic link file
+p pipe file
+s socket file
+$ls -l 명령
